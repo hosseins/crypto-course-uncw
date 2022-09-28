@@ -4,7 +4,6 @@ import sys
 def readFileContent(filePath):
     file_content = None
     with open(filePath, "r") as f:
-        print("reading file: ", filePath)
         file_content = f.read()
     return file_content
 
