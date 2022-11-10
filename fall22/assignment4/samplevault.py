@@ -12,7 +12,7 @@ def enableTransitEngine():
         print("The transit engine is already being enabled.")
 
 def createKey():
-    keyname = "emilyskey"
+    keyname = "mykey"
     os.system("vault write -f transit/keys/{}".format(keyname))
 
 def decodeMessage(cipher):
@@ -23,6 +23,7 @@ def encryptMessage(plain, key):
     print(str(b))
     os.system("vault write transit/encrypt/{} plaintext={}".format(key, b.decode('utf-8')))
     return
+
 
 setEnvVar()
 encryptMessage("Hello secret world!", "emilyskey")
